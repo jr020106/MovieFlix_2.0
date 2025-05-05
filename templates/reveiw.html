@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+            color: #eb0c0c;
+    text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="{% static 'images/war.jpg' %}" alt="yodha">
+            <div class="movie-details">
+                <h2>War</h2>
+                <p><strong>Year:</strong> 2019 | <strong>Rating:</strong> 6.6★| <strong>Duration:</strong> 2h 31min</p>
+                <p>Kabir, a secret agent, goes rogue after a mission to catch a terrorist goes awry. However, his boss sends Khalid, another agent and his student, to track him down.</p>
+                <p><strong>Genres:</strong>Action Epic Globetrotting Adventure Spy Action Adventure thriller</p>
+                <p><strong>Director:</strong> 
+                    Siddharth Anand </p>
+                <p><strong>Writers:</strong> 
+                    Siddharth Anand Aditya Chopra Shridhar Raghavan</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <iframe 
+                src="https://www.youtube.com/embed/tQ0mzXRk-oM"
+                frameborder="0"
+                allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="{% static 'images/hrithik roshan.jpg' %}" alt="sid malhotra">
+                <h3>Major Kabir Dhaliwal</h3>
+                <p>Hrithik Roshan</p>
+            </div>
+            <div class="info-box">
+                <img src="{% static 'images/tiger-Shroff.avif' %}" alt="rashi khanna">
+                <h3>Captain Khalid Rahmani</h3>
+                <p>Tiger Shroff</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="{% static 'images/vani kapoor.avif' %}" alt="disha-patani">
+                <h3>Naina Verma</h3>
+                <p>Vaani Kapoor</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="{% static 'images/ashutosh.jpg' %}" alt="kritika">
+            <h3>Colonel Sunil Luthra</h3>
+            <p>Ashutosh Rana</p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>Epic action movie with an overdose of twists and turns</strong><br>
+                        The action scenes are spectacular and vary from explosive car chases to combats in an old church that has fallen into disrepair. The special effects have been designed with care as the camera work and light techniques are very solid except from one unnecessarily nauseating scene in a conference room. The beautiful locations and settings are very colourful and vary from India over Italy to the Arctic Circle.</p>
+                </div>
+                <div class="review">
+                    <p><strong>Cheap copy of a Hollywood action movie minus the logic</strong><br>
+                        Plot/Storyline - there would literally be 500+ movies made in Hollywood and about 100 in Bollywood, but based on an assumption that most people dont use logic Directorand storytellers have used even a bit of logic and emotional melodrama is just icing on the cake Keep a headache pill handy.</p>
+                </div>
+                <div class="review">
+                    <p><strong>Bollywood has now Raised the Bar in Action!</strong><br>
+                        A well executed piece of Action art that seriously surpassed my expectations! Considering the budget and the technology Bollywood have in hands ; this surely set the standards few notches up. The casting of Hrithik and Tiger made it much appealing too! They duly justified their respective roles. Locations, Cinematography, CGI all looked pretty good considering it's Bollywood. It's still not close of Hollywood regarding the Action pieces but I must admit it surprised me a lot with what it already had.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>
+

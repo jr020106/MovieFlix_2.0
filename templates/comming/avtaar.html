@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Movie Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .trailer {
+      flex: 1 1 600px;
+      max-width: 700px;
+    }
+
+    .description {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    .description h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color:#f44336
+    }
+
+    .description p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .gallery {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .starcast-section {
+  padding: 2rem;
+  background-color: #1c1c1c;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f00404;
+  text-align: center;
+}
+
+.starcast-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.star-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #222;
+  border-radius: 50%;
+  padding: 1rem;
+  text-align: center;
+  width: 150px;
+  color: white;
+}
+
+.star-card img {
+  width: 100%;
+  border-radius: 50%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.rank {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.rank .up {
+  color: #4caf50;
+}
+
+.rank .down {
+  color: #f44336;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+  <body>
+
+<div style="padding: 2rem; background-color: #1c1c1c; color: white; display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+  <!-- <img src="housefull 5.png" alt="Housefull 5 Poster" style="width: 120px; border-radius: 10px; flex-shrink: 0;"> -->
+  <img src="{% static 'images/avatar.jpg' %}" alt="sid malhotra" style="width: 120px; border-radius: 10px; flex-shrink: 0;">
+  <div style="flex: 1 1 250px;">
+    <h2 style="font-size: 2rem; color: #f44336; margin-top: 0;">Avatar: Fire & Ash</h2>
+    <p><strong>Release date:</strong> 19 Dec 2025(USA) | <strong>Director:</strong> James Cameron | <strong>Screenplay:</strong> James Cameron
+        Rick Jaffa
+        Amanda Silver </p>
+    <p>"Avatar 3" and "Fire and Ash" redirect here. For the third season of Avatar: The Last Airbender, see Avatar: The Last Airbender season 3. </p>
+    <p><strong>Genres:</strong> Action Sci-fi </p>
+    <p><strong>Producer:</strong>James Cameron
+        Jon Landau</p>
+    <p><strong>Writers:</strong> 	 James Cameron, Rick Jaffa, Josh Friedman, Amanda Silver</p>
+    
+  </div>
+</div>
+
+  
+    
+    <div class="hero">
+      <div class="trailer">
+        <iframe src="https://www.youtube.com/embed/1IHtfL8iIXg" title="Movie Trailer" allowfullscreen></iframe>
+      </div>
+      <div class="description" style="display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 1 1 250px;">
+          <h2>Avatar: Fire and Ash</h2>
+          <p>
+            Avatar: Fire and Ash is an upcoming American epic science fiction film co-produced, co-edited, and directed by James Cameron, who co-wrote the screenplay with Rick Jaffa and Amanda Silver from a story the trio wrote with Josh Friedman and Shane Salerno. Distributed by 20th Century Studios, it is the sequel to Avatar (2009) and Avatar: The Way of Water (2022) and the third installment in the Avatar film series. Cast members Sam Worthington, Zoe Saldaña, Stephen Lang, Sigourney Weaver, Joel David Moore, CCH Pounder, Giovanni Ribisi, Dileep Rao, Matt Gerald, Kate Winslet, Cliff Curtis, Edie Falco, Brendan Cowell, Jemaine Clement, Britain Dalton, Trinity Jo-Li Bliss, Jack Champion, Bailey Bass, Filip Geljo and Duane Evans, Jr. reprise their roles from previous films, while David Thewlis and Oona Chaplin portray new characters.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <div class="starcast-section">
+    <h2 class="section-title">🎬 Star Cast</h2>
+    <div class="starcast-carousel">
+      <div class="star-card">
+        <img src="{% static 'images/zoe.jpg' %}" alt="sid malhotra">
+        <p class="name">Zoe Saldana</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Sam.jpg' %}" alt="sid malhotra">
+        <p class="name">Sam Worthington</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/WEaver.jpg' %}" alt="sid malhotra">
+        <p class="name">Sigourney Weaver</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Stephen.jpg' %}" alt="sid malhotra">
+        <p class="name">Stephen Lang</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/kate.jpg' %}" alt="sid malhotra">
+        <p class="name">Kate Winslet</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/michelle.jpg' %}" alt="sid malhotra">
+        <p class="name">Michelle Yeoh</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/david.jpg' %}" alt="sid malhotra">
+        <p class="name">David Thewlis</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/oona.jpg' %}" alt="sid malhotra">
+        <p class="name">Oona Chaplin</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/edie.jpg' %}" alt="sid malhotra">
+        <p class="name">Edie Falco</p>
+      </div>
+
+    </div>
+  </div>
+  
+
+</body>
+</html>

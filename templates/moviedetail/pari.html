@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+            color: #eb0c0c;
+    text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="{% static 'images/pari.jpg' %}" alt="cocktail">
+            <div class="movie-details">
+                <h2>Pari</h2>
+                <p><strong>Year:</strong> 2018<strong>Rating:</strong> 6.6★| <strong>Duration:</strong> 2h 16min</p>
+                <p>Arnab tries to help Ruksahana, who is found under mysterious circumstances in a house. He lets her stay at his home until he discovers something strange about her</p>
+                <p><strong>Genres:</strong> Fantasy Horror Mystery</p>
+                <p><strong>Director:</strong> 
+                    Prosit Roy</p>
+                <p><strong>Writers:</strong>
+                    Abhishek BanerjeeProsit RoyAnvita Dutt</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <iframe src="https://www.youtube.com/embed/PQKu78NnyvU" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="{% static 'images/anushka.jpg' %}" alt="saif">
+                <h3>Rukhsana</h3>
+                <p>Anushka Sharma</p>
+            </div>
+            <div class="info-box">
+                <img src="{% static 'images/chatterji.jpg' %}" alt="Diana">
+                <h3>Arnab</h3>
+                <p>Parambrata Chattopadhyay</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="{% static 'images/rajat kapoor.jpg' %}" alt="deepika">
+                <h3>Professor</h3>
+                <p>Rajat Kapoor</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="{% static 'images/piyali.jpg' %}" alt="dimple">
+            <h3>Piyali</h3>
+            <p>Ritabhari Chakraborty </p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>"If she is a monster, then what does that make me?"</strong><br>
+                        This is not a typical ghost story. If you ever watched Let Me In; which is a story about a little boy being friends with a girl who turned out to be a vampire, you would surely liked this one.
+</p>
+                </div>
+                <div class="review">
+                    <p><strong>Redifining Bollywood Horror Genre</strong><br>
+                        Dhamaal is an entertaining movie. However, one can't shake off the fact that the movies LIFTS scenes and story lines from AROUND 5-6 Hollywood MOVIES, right from the first scene.
+
+                        First scene is a rip-off of Johnny English, the third scene is copied from one of Mr.Bean's episodes. The whole damn storyline is EXACTLY IDENTICAL to 'Its a Mad Mad World' and 'Rat Race'. Later one, the movie lifts the bridge scene from 'Road Trip', the tiger roar scene is from a movie called Without A Paddle, and the whole soap gun scene is from 'Small Time Crooks'. On many occasions, it is also inspired by Starsky and Hutch.Pari.... what a movie it was. The atmosphere, sound design and acting of all the cast are top notch. Pari is not like other silly Bollywood horror flicks. The complete story is thoroughly gripping. Anushka delivers a mind blowing performance here. I would watch it again. There's only two ways either you like the movie like anything else or you simply hate it.
+                    </p>
+                </div>
+                <div class="review">
+                    <p><strong>Dark, supernatural, romantic, brilliantly acted and executed</strong><br>
+                        This movie is very different, it's not your traditional horror story where you see possession by the ghost and how the ghost is sent out of body etc. etc. Only after you complete the movie you will get the complete picture. It's not at all confusing, the story is pretty clear and straightforward but the way the complete picture is unveiled is brilliant. Acting by all the actors is upto the point and top notch. The movie shows both positive and negative sides of all characters, there is no villain or a hero here. It's based on supernatural elements but presented very realistically.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>
+

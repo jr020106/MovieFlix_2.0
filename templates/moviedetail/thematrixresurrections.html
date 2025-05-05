@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+            color: #eb0c0c;
+    text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="{% static 'images/The_Matrix.jpg' %}" alt="cocktail">
+            <div class="movie-details">
+                <h2>The Matrix</h2>
+                <p><strong>Year:</strong> 1999 | <strong>Rating:</strong> 8.7★| <strong>Duration:</strong> 2h 16min</p>
+                <p>When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.</p>
+                <p><strong>Genres:</strong> Action epic Artificial Intelligence Sci-fi</p>
+                <p><strong>Director:</strong> Lana WachowskiLilly | Wachowski</p>
+                <p><strong>Writers:</strong> Lana WachowskiLilly| Wachowski</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <iframe src="https://www.youtube.com/embed/m8e-FF8MsqU" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="{% static 'images/neo.jpg' %}" alt="saif">
+                <h3>Neo</h3>
+                <p>Keanu Reeves</p>
+            </div>
+            <div class="info-box">
+                <img src="{% static 'images/morpheus.jpg' %}" alt="Diana">
+                <h3>Morpheus</h3>
+                <p>Laurence Fishburne</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="{% static 'images/trinity.jpg' %}" alt="deepika">
+                <h3>Trinity</h3>
+                <p>Carrie-Anne Moss</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="{% static 'images/smith.jpg' %}" alt="dimple">
+            <h3>Agent Smith</h3>
+            <p>Hugo Weaving</p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>Benchmark forever.</strong><br>
+                        If we say it sci-fi at its best, it won't be wrong. The hype was real, it is still not easy to match the level of Matrix where we experience the connection of humans and science, that too with amazing action fight and chase scenes, not just normal scenes they were, multiple exposures, slow motion 3D moves, Oh My God, and it's understandable as well like what are the characters up to and what storyline they are entering into. 
+</p>
+                </div>
+                <div class="review">
+                    <p><strong>One of the best action sci fi action movies of all time!
+                    </strong><br>The film is as well crafted as the matrix itself! On another level entirely to any other science fiction film from the last 20 years . Getting lost in another world, is interly what Cinema is made for. This one takes you into a whole new universe interly . </p>
+                </div>
+                <div class="review">
+                    <p><strong>Welcome to the Real World.</strong><br>
+                        Without a doubt one of the best and most influential movies of all time, the Matrix is the defining science fiction film of the 1990's and the biggest leap the genre has taken since Stanley Kubrick's 2001: A Space Odyssey and Ridley Scott's Blade Runner. The Matrix is a ground-breaking motion picture that not only raised the bar for all the science-fiction films to come after it but also redefined the action genre with its thrilling action sequences and revolutionary visual effects.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>
+

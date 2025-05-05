@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Movie Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .trailer {
+      flex: 1 1 600px;
+      max-width: 700px;
+    }
+
+    .description {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    .description h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color:#f44336
+    }
+
+    .description p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .gallery {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .starcast-section {
+  padding: 2rem;
+  background-color: #1c1c1c;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f00404;
+  text-align: center;
+}
+
+.starcast-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.star-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #222;
+  border-radius: 50%;
+  padding: 1rem;
+  text-align: center;
+  width: 150px;
+  color: white;
+}
+
+.star-card img {
+  width: 100%;
+  border-radius: 50%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.rank {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.rank .up {
+  color: #4caf50;
+}
+
+.rank .down {
+  color: #f44336;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+  <body>
+
+<div style="padding: 2rem; background-color: #1c1c1c; color: white; display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+  
+  <img src="{% static 'images/Baaghi4.jpg' %}" alt="sid malhotra" style="width: 120px; border-radius: 10px; flex-shrink: 0;">
+  <div style="flex: 1 1 250px;">
+    <h2 style="font-size: 2rem; color: #f44336; margin-top: 0;">Baaghi 4</h2>
+    <p><strong>Release date:</strong> 5 september 2025 | <strong>Director:</strong> A. Harsha | <strong>Screenplay:</strong> 	
+        Rajat Arora and Dipti Jindal </p>
+    <p>Baaghi 4 is the upcoming installment in the high-octane Bollywood action franchise, set to release on September 5, 2025 . The film is directed by A. Harsha, marking a new direction for the series after previous entries helmed by Sabbir Khan and Ahmed Khan .</p>
+    <p><strong>Genres:</strong> Action Thriller </p>
+    <p><strong>Producer:</strong>Sajid Nadiadwala</p>
+    <p><strong>Writers:</strong> 	 	
+        Rajat Arora</p>
+    
+  </div>
+</div>
+
+  
+    
+    <div class="hero">
+      <div class="trailer">
+        <iframe src="https://www.youtube.com/embed/8zXHsvkG_Ms" title="Movie Trailer" allowfullscreen></iframe>
+      </div>
+      <div class="description" style="display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 1 1 250px;">
+          <h2>Baaghi 4</h2>
+          <p>
+            Baaghi is an Indian film series produced by Sajid Nadiadwala under Nadiadwala Grandson Entertainment. The protagonist in the series is portrayed by Tiger Shroff. The first film in the series, Baaghi, was released in 2016 and was directed by Sabbir Khan, followed by its sequels, Baaghi 2 (2018) and Baaghi 3 (2020), both directed by Ahmed Khan, Baaghi 4 will be released in 2025 and directed by A. Harsha. Baaghi 2 is the most successful film in the series to date, grossing over ₹258 crores worldwide.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <div class="starcast-section">
+    <h2 class="section-title">🎬 Star Cast</h2>
+    <div class="starcast-carousel">
+      <div class="star-card">
+        <img src="{% static 'images/tiger.avif' %}" alt="sid malhotra">
+        <p class="name">Tiger Shroff</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Sanjay.jpg' %}" alt="sid malhotra">
+        <p class="name">Sanjay Dutt</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/sonam.jpeg' %}" alt="sid malhotra">
+        <p class="name">Sonam Bajwa</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/harnaaz.jpg' %}" alt="sid malhotra">
+        <p class="name">Harnaaz Sandhu</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/mahesh.jpg' %}" alt="sid malhotra">
+        <p class="name">Mahesh Thakur</p>
+      </div>
+
+    </div>
+  </div>
+  
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Movie Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .trailer {
+      flex: 1 1 600px;
+      max-width: 700px;
+    }
+
+    .description {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    .description h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color:#f44336
+    }
+
+    .description p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .gallery {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .starcast-section {
+  padding: 2rem;
+  background-color: #1c1c1c;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f00404;
+  text-align: center;
+}
+
+.starcast-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.star-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #222;
+  border-radius: 50%;
+  padding: 1rem;
+  text-align: center;
+  width: 150px;
+  color: white;
+}
+
+.star-card img {
+  width: 100%;
+  border-radius: 50%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.rank {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.rank .up {
+  color: #4caf50;
+}
+
+.rank .down {
+  color: #f44336;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+  <body>
+
+<div style="padding: 2rem; background-color: #1c1c1c; color: white; display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+  <!-- <img src="housefull 5.png" alt="Housefull 5 Poster" style="width: 120px; border-radius: 10px; flex-shrink: 0;"> -->
+  <img src="{% static 'images/kantarachapter1.jpg' %}" alt="sid malhotra" style="width: 120px; border-radius: 10px; flex-shrink: 0;">
+  <div style="flex: 1 1 250px;">
+    <h2 style="font-size: 2rem; color: #f44336; margin-top: 0;">Kantara Chapter 1</h2>
+    <p><strong>Release date:</strong> 2 Oct 25 | <strong>Director:</strong> Rishab Shetty | <strong>Screenplay:</strong> Sapthami Gowda 
+        Jayaram
+        Kishore </p>
+    <p>Exploring the origins of Kaadubettu Shiva during the Kadamba dynasty era, it delves into the untamed wilderness and forgotten lore surrounding his past. </p>
+    <p><strong>Genres:</strong> Action Thriller</p>
+    <p><strong>Producer:</strong>Chaluve Gowda
+        Vijay Kiragandur</p>
+    <p><strong>Writers:</strong> 	 Rishab Shetty</p>
+    
+  </div>
+</div>
+
+  
+    
+<div class="hero">
+  <div class="trailer">
+    <iframe 
+      width="560" 
+      height="315" 
+      src="https://www.youtube.com/embed/DzYYmTbsN84" 
+      title="Movie Trailer" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="description" style="display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap;">
+    <div style="flex: 1 1 250px;">
+      <h2>Kantara A Legend: Chapter 1</h2>
+      <p>
+        "Kantara: Chapter 1" is a prequel to the 2022 Kannada film "Kantara" directed by Rishab Shetty. It delves into the origins of the deities Panjurli Daiva and Guliga Daiva, drawing inspiration from ancient Kadamba period mythology and history. The film is set during the Kadamba dynasty in Karnataka and explores the rich cultural and historical significance of the era. It features a massive war sequence choreographed by both national and international experts, with over 500 fighters and a cast of nearly 3,000 people. 
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="starcast-section">
+    <h2 class="section-title">🎬 Star Cast</h2>
+    <div class="starcast-carousel">
+      <div class="star-card">
+        <img src="{% static 'images/RishabShetty.jpg' %}" alt="RishabShetty">
+        <p class="name">Rishab Shetty</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/SapthamiGowda.jpeg' %}" alt="SapthamiGowda">
+        <p class="name">Sapthami Gowda</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Jayaram.jpeg' %}" alt="Jayaram">
+        <p class="name">Jayaram</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/kishore.jpg' %}" alt="kishore">
+        <p class="name">Kishore</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/AchyuthKumar.jpg' %}" alt="AchyuthKumar">
+        <p class="name">Achyuth Kumar</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/pramodshetty.jpg' %}" alt="pramodshetty">
+        <p class="name">Pramod Shetty</p>
+      </div>
+      
+    </div>
+  </div>
+  
+
+</body>
+</html>

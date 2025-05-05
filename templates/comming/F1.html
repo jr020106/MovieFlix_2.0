@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Movie Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .trailer {
+      flex: 1 1 600px;
+      max-width: 700px;
+    }
+
+    .description {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    .description h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color:#f44336
+    }
+
+    .description p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .gallery {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .starcast-section {
+  padding: 2rem;
+  background-color: #1c1c1c;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f00404;
+  text-align: center;
+}
+
+.starcast-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.star-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: #222;
+  border-radius: 50%;
+  padding: 1rem;
+  text-align: center;
+  width: 150px;
+  color: white;
+}
+
+.star-card img {
+  width: 100%;
+  border-radius: 50%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.rank {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.rank .up {
+  color: #4caf50;
+}
+
+.rank .down {
+  color: #f44336;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+  <body>
+
+<div style="padding: 2rem; background-color: #1c1c1c; color: white; display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+  <!-- <img src="housefull 5.png" alt="Housefull 5 Poster" style="width: 120px; border-radius: 10px; flex-shrink: 0;"> -->
+  <img src="{% static 'images/F1.jpg' %}" alt="sid malhotra" style="width: 120px; border-radius: 10px; flex-shrink: 0;">
+  <div style="flex: 1 1 250px;">
+    <h2 style="font-size: 2rem; color: #f44336; margin-top: 0;">F1</h2>
+    <p><strong>Release date:</strong> 27 June 2025(USA) | <strong>Director:</strong>
+        Joseph Kosinski | <strong>Screenplay:</strong> 
+        Brad Pitt
+        Kerry Condon
+        Javier Bardem </p>
+    <p>A Formula One driver comes out of retirement to mentor and team with a younger driver. </p>
+    <p><strong>Genres:</strong> Motorsport Drama </p>
+    <p><strong>Producer:</strong>Brad Pitt
+        Joseph Kosinski</p>
+    <p><strong>Writers:</strong> 	 
+        Joseph Kosinski, Ehren Kruger</p>
+    
+  </div>
+</div>
+
+  
+    
+<div class="hero">
+  <div class="trailer">
+    <iframe 
+      width="560" 
+      height="315" 
+      src="https://www.youtube.com/embed/CT2_P2DZBR0" 
+      title="Movie Trailer" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="description" style="display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap;">
+    <div style="flex: 1 1 250px;">
+      <h2>F1</h2>
+      <p>
+        The Apple Original Films movie "F1," starring Brad Pitt as a former driver named Sonny Hayes, is a sports drama set in the world of Formula 1 racing. Pitt plays Sonny, who returns to the sport to partner with a rookie driver, Joshua Pearce, played by Damson Idris, on the fictional team APXGP. The film is directed by Joseph Kosinski and is scheduled for release in June 2025. The movie is produced by Apple Studios and is expected to showcase the high-stakes world of Formula 1 racing, with a focus on the intense competition and personal dynamics within the sport. The film also features a talented cast, including Kerry Condon, who plays Sonny's team principal, and other notable actors in supporting roles.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="starcast-section">
+    <h2 class="section-title">🎬 Star Cast</h2>
+    <div class="starcast-carousel">
+      <div class="star-card">
+        <img src="{% static 'images/Brad_Pitt.jpg' %}" alt="sid malhotra">
+        <p class="name">Brad Pitt</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Kerry_Condon.jpeg' %}" alt="sid malhotra">
+        <p class="name">Kerry Condon</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Emelina_Adams.jpeg' %}" alt="sid malhotra">
+        <p class="name">Emelina Adams</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Javier_Bardem.jpg' %}" alt="sid malhotra">
+        <p class="name">Javier Bardem</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Will_Merrick.jpg' %}" alt="sid malhotra">
+        <p class="name">Will Merrick</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Tobias_Menzies.jpeg' %}" alt="sid malhotra">
+        <p class="name">Tobias Menzies</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Liz_Kingsman.jpg' %}" alt="sid malhotra">
+        <p class="name">Liz Kingsman</p>
+      </div>
+      <div class="star-card">
+        <img src="{% static 'images/Damson_Idris.jpg' %}" alt="sid malhotra">
+        <p class="name">Damson Idris</p>
+      </div>
+
+    </div>
+  </div>
+  
+
+</body>
+</html>

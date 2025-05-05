@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+            color: #eb0c0c;
+            text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+            background: none; /* Ensures no highlight box */
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="{% static 'images/3idiot.webp' %}" alt="3 Idiots">
+            <div class="movie-details">
+                <h2>3 Idiots</h2>
+                <p><strong>Year:</strong> 2009 | <strong>Rating:</strong> 8.4★| <strong>Duration:</strong> 2h 50min</p>
+                <p>Three friends, who met in an engineering college, reunite after years to find their missing friend, who was considered to be a misfit in the college.</p>
+                <p><strong>Genres:</strong> Comedy, Drama</p>
+                <p><strong>Director:</strong> Rajkumar Hirani</p>
+                <p><strong>Writers:</strong> Rajkumar Hirani, Abhijat Joshi</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <iframe 
+                src="https://www.youtube.com/embed/xvszmNXdM4w"
+                frameborder="0"
+                allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        
+        
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="{% static 'images/amirkhan.webp' %}" alt="Aamir Khan">
+                <h3>Rancho</h3>
+                <p>Aamir Khan</p>
+            </div>
+            <div class="info-box">
+                <img src="{% static 'images/rkmadhvan.jpeg' %}" alt="R. Madhavan">
+                <h3>Farhan</h3>
+                <p>R. Madhavan</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="{% static 'images/sharmanjoshi.jpeg' %}" alt="Shalini">
+                <h3>Chatur</h3>
+                <p>Shalini</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="{% static 'images/kareenakapoor.webp' %}" alt="Kareena Kapoor">
+            <h3>Raju</h3>
+            <p>Kareena Kapoor</p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>Masterpiece of Bollywood</strong><br>
+                        This movie is an absolute classic that everyone must watch at least once! The performances are top-notch, and the plot is both heartwarming and inspirational.</p>
+                </div>
+                <div class="review">
+                    <p><strong>Funny, but carries a deeper message</strong><br>
+                        3 Idiots is both hilarious and thought-provoking. The way it addresses the education system and the pressures students face is commendable. A must-watch for all ages.</p>
+                </div>
+                <div class="review">
+                    <p><strong>Comedy with emotions</strong><br>
+                        The comedy is fantastic, but what makes this film stand out is its emotional depth. It truly shows the value of friendship, education, and following one's dreams.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+            color: #eb0c0c;
+    text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="{% static 'images/kalki.jpg' %}" alt="yodha">
+            <div class="movie-details">
+                <h2>Kalki 2898AD</h2>
+                <p><strong>Year:</strong> 2024 | <strong>Rating:</strong> 7★| <strong>Duration:</strong> 3h 1min</p>
+                <p>A modern day avatar of Vishnu a Hindu god, who is believed to have descended to earth to protect the world from evil forces.</p>
+                <p><strong>Genres:</strong>Action Science-fiction Adventure Fantasy</p>
+                <p><strong>Director:</strong> 
+                    Nag Ashwin </p>
+                <p><strong>Writers:</strong> 
+                    Nag Ashwin Rutham Samar</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <iframe 
+            src="https://www.youtube.com/embed/aninoDcPWo4"
+                frameborder="0"
+                allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="{% static 'images/prabhas.avif' %}" alt="sid malhotra">
+                <h3>Bhairava</h3>
+                <p>Prabhas</p>
+            </div>
+            <div class="info-box">
+                <img src="{% static 'images/Amitabh bachchan.jpg' %}" alt="rashi khanna">
+                <h3>Ashwatthama</h3>
+                <p>Amitabh Bachchan</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="{% static 'images/deepika.jpg' %}" alt="disha-patani">
+                <h3>Sum 80</h3>
+                <p>Deepika Padukone</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="{% static 'images/disha-patani.jpg' %}" alt="kritika">
+            <h3>Roxin</h3>
+            <p>Disha Patani</p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>Atrocious first half, forced comedy and terrible props bring this movie down!</strong><br>
+                        The soaring epicness of second part of the film and the excellent climax were tainted by bloated, boring and technically terrible first half. It had cringe dialogues, poorly choreographed action scenes and unnecessary subplots.
+
+The props used throughout the movie looked like cheap foam. There was too much "inspiration" drawn from Hollywood movies.
+
+The first attempt from Nag Ashwin is average at best. I hope he improves significantly in the second part of this film. To do so, he should focus on Mahabharata and adapt it as faithfully as possible. The sci-fi elements of the movie were most disappointing, whereas, the characters from the great epic were thoroughly exhilarating!</p>
+                </div>
+                <div class="review">
+                    <p><strong>Could have been so so much better</strong><br>
+                        I don't understand the obsession with hero entry and why people are not against it if you have a good story then just stick with why do you need the star to be bigger than the story first hour of story is skippable completely , rest vfx was top notch even the ending was very good but this obsession with hero needs to stop also the director did not invent the character Kalki nor any references that they took from Mahabharata so please be respectful because its a part of our history not something that you can mock or not make it serious just because you want the hero entry or want films to have some useless and unfunny comedy.</p>
+                </div>
+                <div class="review">
+                    <p><strong>
+                        A perfect blend of storytelling
+                        
+                        </strong><br>
+                        One of the best movie of 2024. The combination of mythology and facts were blended perfectly to capture the audience. It's set in 2898 AD, where the city of Kasi is humanity's last refuge, ruled by the god king Supreme Yaskin, played by Kamal Haasan. The story spans from the Mahabharata era to the future, focusing on Kalki, Vishnu's final avatar.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+            color: #eb0c0c;
+    text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="{% static 'images/Dhamaal.jpg' %}" alt="cocktail">
+            <div class="movie-details">
+                <h2>Dhamaal</h2>
+                <p><strong>Year:</strong> 2007 | <strong>Rating:</strong> 7.5★| <strong>Duration:</strong> 2h 16min</p>
+                <p>Four lazy slacker conmen buddies learn about the secret of a hidden treasure from a dying thief and set out to find and claim it while being pursued by a determined police inspector who is hellbent to get the treasure all by himself.</p>
+                <p><strong>Genres:</strong> Road trip Action Adventure Comedy</p>
+                <p><strong>Director:</strong> Indra Kumar</p>
+                <p><strong>Writers:</strong>
+                    Paritosh Painter Balvinder Singh Suri Bunty Rathore</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <iframe src="https://www.youtube.com/embed/D7felvV3JRc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="{% static 'images/sanjay.jpg' %}" alt="saif">
+                <h3>Kabir Nayak</h3>
+                <p>Sanjay Dutt</p>
+            </div>
+            <div class="info-box">
+                <img src="{% static 'images/ritesh.jpg' %}" alt="Diana">
+                <h3>Deshbandhu Roy</h3>
+                <p>Riteish Deshmukh</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="{% static 'images/arshad.jpg' %}" alt="deepika">
+                <h3>Adi</h3>
+                <p>Arshad Warsi</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="{% static 'images/javed.jpg' %}" alt="dimple">
+            <h3>Manav Shrivastav</h3>
+            <p>Jaaved Jaaferi</p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>One of the best comedies</strong><br>
+                        Inder Kumar's Dhamaal,is on of the cleanest and funniest movies to come out in Bollywood.
+Nowadays,we hardly get to see squeaky clean comedy movies.
+Dhamaal is a little gem which deserves a watch.This movie was not promoted heavily but soon gain popularity among people and became a super hit at box-office.
+</p>
+                </div>
+                <div class="review">
+                    <p><strong>Entertaining, but not an original work.</strong><br>
+                        Dhamaal is an entertaining movie. However, one can't shake off the fact that the movies LIFTS scenes and story lines from AROUND 5-6 Hollywood MOVIES, right from the first scene.
+
+                        First scene is a rip-off of Johnny English, the third scene is copied from one of Mr.Bean's episodes. The whole damn storyline is EXACTLY IDENTICAL to 'Its a Mad Mad World' and 'Rat Race'. Later one, the movie lifts the bridge scene from 'Road Trip', the tiger roar scene is from a movie called Without A Paddle, and the whole soap gun scene is from 'Small Time Crooks'. On many occasions, it is also inspired by Starsky and Hutch. </p>
+                </div>
+                <div class="review">
+                    <p><strong>Bollywood's Mad Mad Mad World !</strong><br>
+                        Since a great cinematic action comedy named (It's a Mad Mad Mad Mad World) was made in (1963) the world had gone real mad about it.
+
+                        There is almost a version every decade. American different treatments like (Scavenger Hunt) in (1979), (Million Dollar Mystery) in (1987), an Egyptian one (Maganeen ala El-Tareek) in (1991), an American remake (Rat Race) in (2001), then – in the same decade – why not an Indian one too (Dhamaal – 2007).</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>
+

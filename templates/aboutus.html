@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Elegant Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #000;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .our-story {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 60px 10%;
+      gap: 30px;
+    }
+
+    .our-story .text {
+      flex: 1;
+    }
+
+    .our-story h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .our-story p {
+      font-size: 16px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .our-story img {
+      width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .team {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .team h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .member {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      width: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .member:hover {
+      transform: scale(1.05);
+    }
+
+    .member img {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #444;
+    }
+
+    .member h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .member p {
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>About Us</h1>
+    <p>Meet the Team Behind the Magic</p>
+  </header>
+
+  <section class="our-story">
+    <div class="text">
+      <h2>Our Story</h2>
+      <p>
+      MovieFlix was born from a late-night conversation among friends who loved cinema.
+      We realized that while there are many platforms, none felt truly made for us.
+      What started as a fun coding experiment turned into a full-fledged movie site.
+      We spent days designing, coding, and debating every feature.
+      With passion and countless cups of chai, MovieFlix slowly came to life.
+      Today, it's more than just a site — it’s our tribute to the world of movies
+      </p>
+    </div>
+    <img src="{% static 'images/aboutus.png' %}" alt="aboutus">
+  </section>
+
+  <section class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="{% static 'images/Harman.jpg' %}" alt="Harman">
+        <h3>Harman Katodia</h3>
+      </div>
+      <div class="member">
+        <img src="{% static 'images/Jatin.jpg' %}" alt="Jatin">
+        <h3>Jatin Ratra</h3>
+      </div>
+      <div class="member">
+        <img src="{% static 'images/kashakthakur[1].jpg' %}" alt="Kashak">
+        <h3>Kashak</h3>
+        
+      </div>
+      <div class="member">
+        <img src="{% static 'images/Harishnoor.jpg' %}" alt="Harishnoor">
+        <h3>Harishnoor Kaur</h3>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Elegant Team. All rights reserved.</p>
+  </footer>
+</body>
+</html>
