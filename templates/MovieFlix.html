@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/MovieFlix.css' %}">
 
     <style>
-        /* Add styles for the logout button */
+        
         .logout {
             background-color: #cd0101;
             color: #fff;
@@ -22,8 +22,8 @@
         .welcome-message {
             display: flex;
             align-items: center;
-            justify-content: flex-end; /* Aligns the content to the right */
-            flex-grow: 1; /* Allows the welcome message to take up remaining space */
+            justify-content: flex-end; 
+            flex-grow: 1; 
         }
         .navbar {
             display: flex;
@@ -183,13 +183,13 @@
     
     <footer id="103">
         <div class="footer-container">
-            <!-- About MovieFlix -->
+            
             <div class="footer-section">
                 <h5>About MovieFlix</h5>
                 <p>MovieFlix is your go-to destination for discovering, rating, and reviewing thousands of movies. Whether you're a casual viewer or a die-hard cinephile, we bring you in-depth reviews, personalized recommendations, and a vibrant community of movie lovers.</p>
             </div>
     
-            <!-- Contact Information -->
+            
             <div class="footer-section">
                 <h5>Contact Us</h5>
                 <p>Email: support@movieflix.com</p>
@@ -197,7 +197,7 @@
                 <p>Address: 123 Movie Street, Hollywood, CA</p>
             </div>
     
-            <!-- Social Media -->
+            
             <div class="footer-section">
                 <h5>Follow Us</h5>
                 <div class="social-icons">
@@ -210,7 +210,7 @@
             
         </div>
     
-        <!-- Copyright -->
+        
         <div class="footer-bottom">
             <p>&copy; 2025 MovieFlix. All Rights Reserved.</p>
         </div>
@@ -223,7 +223,7 @@
     }
     function searchMovies() {
             var searchQuery = document.getElementById('search-query').value;
-            // URL ko update karo search query ke saath
+            
             window.location.href = '{% url "search" %}?q=' + searchQuery;
         }
     </script>

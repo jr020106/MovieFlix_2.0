@@ -23,7 +23,7 @@ def moviedetail(request, movie_slug):
 def cocktail(request):
     return render(request, "cocktail.html")
 def moviedetail(request, movie_slug):
-    # fetch movie from database using slug
+    
     movie = get_object_or_404(Movie, slug=movie_slug)
     return render(request, 'moviedetail.html', {'movie': movie})
 
@@ -71,7 +71,7 @@ from django.contrib import messages
 
 def login_view(request):
     if request.method == 'POST':
-        # Your login logic here
+        
         messages.success(request, 'Login successful')
     return render(request, 'login.html')
 def review(request):
@@ -88,15 +88,15 @@ def baaghi(request):
     return render(request, 'comming/baaghi.html')
 
 from django.shortcuts import render
-from .models import Movie  # Tumhare Movie model ko import karo
+from .models import Movie  
 
 def search_movies(request):
-    query = request.GET.get('q', '')  # URL se query le lo
+    query = request.GET.get('q', '')  
     if query:
-        # Movies ko filter karo jo query se match karti ho
-        movies = Movie.objects.filter(title__icontains=query)  # Case-insensitive search
+        
+        movies = Movie.objects.filter(title__icontains=query)  
     else:
-        movies = Movie.objects.all()  # Agar query nahi hai, sab movies dikhao
+        movies = Movie.objects.all()  
 
     return render(request, 'your_template.html', {'movies': movies, 'query': query})
 
